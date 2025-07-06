@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-
 interface ModelCardProps {
   name: string;
   provider: string;
@@ -11,7 +10,6 @@ interface ModelCardProps {
   featured?: boolean;
   invertIcon?: boolean;
 }
-
 export const ModelCard = ({
   name,
   provider,
@@ -24,9 +22,7 @@ export const ModelCard = ({
   invertIcon = false
 }: ModelCardProps) => {
   const borderClass = featured ? "md:border-primary" : "border-slate-6";
-  
-  return (
-    <div className={`group/card text-card-foreground transition-all duration-200 hover:text-slate-12 hover:shadow-lg group bg-background rounded-lg border p-4 shadow-sm hover:border-primary ${borderClass}`}>
+  return <div className={`group/card text-card-foreground transition-all duration-200 hover:text-slate-12 hover:shadow-lg group bg-background rounded-lg border p-4 shadow-sm hover:border-primary ${borderClass}`}>
       <div className="space-y-2">
         <div>
           <a className="hover:underline" href={`#`}>
@@ -36,26 +32,20 @@ export const ModelCard = ({
               </div>
               <div className="items-center justify-center size-6 flex-shrink-0 rounded-full border border-border/50 shadow bg-muted p-0.5 hidden md:flex transition-transform group-hover:scale-110 group-hover:rotate-12">
                 <div className={`overflow-hidden rounded-full ${invertIcon ? 'dark:invert' : ''}`}>
-                  <img 
-                    width="256" 
-                    height="256" 
-                    alt={`Favicon for ${provider}`} 
-                    className="h-full w-full object-cover" 
-                    src={providerIcon}
-                  />
+                  <img width="256" height="256" alt={`Favicon for ${provider}`} className="h-full w-full object-cover" src={providerIcon} />
                 </div>
               </div>
             </div>
           </a>
           <div className="flex items-center">
             <span className="text-muted-foreground text-xs">
-              by <a className="text-primary hover:underline" href="#">{provider}</a>
+              by <a href="#" className="text-primary hover:underline">google{provider}</a>
             </span>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-3 pt-2 md:pt-0">
           <div>
-            <p className="text-green-10 text-sm font-medium">{tokens}</p>
+            <p className="text-green-10 text-sm font-medium">114.5B{tokens}</p>
             <p className="text-muted-foreground text-[10px]">Tokens/wk</p>
           </div>
           <div>
@@ -70,6 +60,5 @@ export const ModelCard = ({
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
