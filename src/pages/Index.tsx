@@ -8,8 +8,10 @@ import { FeatureCards } from "@/components/FeatureCards";
 import { QuickActions } from "@/components/QuickActions";
 import { Footer } from "@/components/Footer";
 import { ExternalLink } from "lucide-react";
+
 const Index = () => {
-  return <div className="min-h-screen bg-background text-foreground">
+  return (
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       
       <main className="tabular-nums">
@@ -34,52 +36,8 @@ const Index = () => {
               </div>
 
               {/* Chat Interface and Featured Models */}
-              <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-16 min-w-full flex-shrink-0">Featured Models
-View Trending
-Gemini 2.5 Pro
-by google
-
-114.5B
-
-Tokens/wk
-
-2.6s
-
-Latency
-
-+131.79%
-
-Weekly growth
-
-GPT-4.1
-by openai
-
-33.3B
-
-Tokens/wk
-
-385ms
-
-Latency
-
--11.39%
-
-Weekly growth
-
-Claude Sonnet 4
-by anthropic
-
-291.0B
-
-Tokens/wk
-
-2.2s
-
-Latency
-
--13.99%
-
-Weekly growth<MainChat />
+              <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-16 min-w-full flex-shrink-0">
+                <MainChat />
                 
                 <div className="w-full min-w-80 space-y-3 md:w-auto">
                   {/* Mobile routing visual */}
@@ -99,7 +57,17 @@ Weekly growth<MainChat />
                     
                     <ProviderIcons />
 
-                    <ModelCard name="GPT-4.1" provider="openai" providerIcon="https://openrouter.ai/images/icons/OpenAI.svg" tokens="33.3B" latency="385ms" growth="-11.39%" growthColor="red" featured={true} invertIcon={true} />
+                    <ModelCard
+                      name="GPT-4.1"
+                      provider="openai"
+                      providerIcon="https://openrouter.ai/images/icons/OpenAI.svg"
+                      tokens="33.3B"
+                      latency="385ms"
+                      growth="-11.39%"
+                      growthColor="red"
+                      featured={true}
+                      invertIcon={true}
+                    />
 
                     <div className="flex items-center justify-between px-2 pt-4">
                       <h2 className="text-slate-11 text-sm font-medium">Featured Models</h2>
@@ -120,11 +88,37 @@ Weekly growth<MainChat />
                       </a>
                     </div>
 
-                    <ModelCard name="Gemini 2.5 Pro" provider="google" providerIcon="https://openrouter.ai/images/icons/GoogleGemini.svg" tokens="114.5B" latency="2.6s" growth="+131.79%" growthColor="green" />
+                    <ModelCard
+                      name="Gemini 2.5 Pro"
+                      provider="google"
+                      providerIcon="https://openrouter.ai/images/icons/GoogleGemini.svg"
+                      tokens="114.5B"
+                      latency="2.6s"
+                      growth="+131.79%"
+                      growthColor="green"
+                    />
 
-                    <ModelCard name="GPT-4.1" provider="openai" providerIcon="https://openrouter.ai/images/icons/OpenAI.svg" tokens="33.3B" latency="385ms" growth="-11.39%" growthColor="red" featured={true} invertIcon={true} />
+                    <ModelCard
+                      name="GPT-4.1"
+                      provider="openai"
+                      providerIcon="https://openrouter.ai/images/icons/OpenAI.svg"
+                      tokens="33.3B"
+                      latency="385ms"
+                      growth="-11.39%"
+                      growthColor="red"
+                      featured={true}
+                      invertIcon={true}
+                    />
 
-                    <ModelCard name="Claude Sonnet 4" provider="anthropic" providerIcon="https://openrouter.ai/images/icons/Anthropic.svg" tokens="291.0B" latency="2.2s" growth="-13.99%" growthColor="red" />
+                    <ModelCard
+                      name="Claude Sonnet 4"
+                      provider="anthropic"
+                      providerIcon="https://openrouter.ai/images/icons/Anthropic.svg"
+                      tokens="291.0B"
+                      latency="2.2s"
+                      growth="-13.99%"
+                      growthColor="red"
+                    />
                   </div>
                 </div>
               </div>
@@ -154,6 +148,8 @@ Weekly growth<MainChat />
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
